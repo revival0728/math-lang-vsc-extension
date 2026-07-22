@@ -1,0 +1,25 @@
+{
+  "name": "math-lang-extension",
+  "displayName": "Math Lang Extension",
+  "description": "Syntax Highlighting for math-lang",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "math-lang-hsingfu",
+      "aliases": ["math-lang", "math-lang-hsingfu"],
+      "extensions": [".mls"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "math-lang-hsingfu",
+      "scopeName": "source.mls",
+      "path": "./syntaxes/math-lang-hsingfu.tmLanguage.json"
+    }]
+  }
+}

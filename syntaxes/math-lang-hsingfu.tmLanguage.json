@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "math-lang",
+  "scopeName": "source.mls",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#function-definition-name" },
+    { "include": "#function-call-name" },
+    { "include": "#builtin-constants" },
+    { "include": "#scientific-notation" },
+    { "include": "#raw-number" },
+    { "include": "#operators" },
+    { "include": "#variables" },
+    { "include": "#parentheses" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.math-lang",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.math-lang",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.math-lang",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "function-definition-name": {
+      "comment": "只高亮 def-fun 的名稱部分。條件：名稱 + 括號內容 + 等號",
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\([^)]*\\)\\s*=)",
+      "captures": {
+        "1": { "name": "entity.name.function.definition.math-lang" }
+      }
+    },
+    "function-call-name": {
+      "comment": "只高亮 fun-call 的名稱部分。條件：名稱 + 左括號 (且後面不是等號)",
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()(?!\\s*\\([^)]*\\)\\s*=)",
+      "captures": {
+        "1": { "name": "entity.name.function.math-lang" }
+      }
+    },
+    "builtin-constants": {
+      "comment": "常見內建常數 (如 pi, e, tau, phi)",
+      "patterns": [
+        {
+          "name": "constant.language.math-lang",
+          "match": "\\b(pi|e|tau|phi|inf|NaN)\\b"
+        }
+      ]
+    },
+    "scientific-notation": {
+      "comment": "科學記號: 1.23e-4 或 5e10",
+      "name": "constant.numeric.scientific.math-lang",
+      "match": "\\b[0-9]+(\\.[0-9]+)?[eE][+-]?[0-9]+\\b"
+    },
+    "raw-number": {
+      "comment": "一般數值: 123 或 3.14",
+      "name": "constant.numeric.decimal.math-lang",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    "operators": {
+      "comment": "二元運算子 (b_op) 與一元運算子 (s_op)",
+      "patterns": [
+        {
+          "name": "keyword.operator.word.math-lang",
+          "match": "\\b(mod)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.math-lang",
+          "match": "[+\\-*/^=:]"
+        }
+      ]
+    },
+    "variables": {
+      "comment": "使用者自訂變數 (user-defined-variable)",
+      "name": "variable.other.math-lang",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    },
+    "parentheses": {
+      "comment": "括號與分隔符號，交由頂層統一定義，避免狀態鎖死",
+      "patterns": [
+        {
+          "name": "punctuation.section.parens.begin.math-lang",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.section.parens.end.math-lang",
+          "match": "\\)"
+        },
+        {
+          "name": "punctuation.separator.sequence.math-lang",
+          "match": ","
+        }
+      ]
+    }
+  }
+}
