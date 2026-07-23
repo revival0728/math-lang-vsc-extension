@@ -53,7 +53,7 @@
       "patterns": [
         {
           "name": "constant.language.math-lang",
-          "match": "\\b(pi|e|tau|phi|inf|NaN)\\b"
+          "match": "\\b(pi|e)\\b"
         }
       ]
     },
