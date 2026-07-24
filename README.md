@@ -9,6 +9,7 @@ This is langauge extension for [math-lang](https://github.com/revival0728/math-l
 
 ## Release Notes
 
-### 1.0.0
+### 0.1.0
 
 - Initial Release
+- add language icon

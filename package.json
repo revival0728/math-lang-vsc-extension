@@ -3,7 +3,7 @@
   "displayName": "Math Lang Extension",
   "description": "Syntax Highlighting for math-lang",
   "repository": "https://github.com/revival0728/math-lang-vsc-extension",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.125.0"
   },

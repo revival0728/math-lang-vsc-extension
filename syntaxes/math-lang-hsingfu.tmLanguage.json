@@ -43,7 +43,7 @@
     },
     "function-call-name": {
       "comment": "只高亮 fun-call 的名稱部分。條件：名稱 + 左括號 (且後面不是等號)",
-      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()(?!\\s*\\([^)]*\\)\\s*=)",
+      "match": "\\b(?!mod)([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()(?!\\s*\\([^)]*\\)\\s*=)",
       "captures": {
         "1": { "name": "entity.name.function.math-lang" }
       }
@@ -53,7 +53,7 @@
       "patterns": [
         {
           "name": "constant.language.math-lang",
-          "match": "\\b(pi|e)\\b"
+          "match": "\\b(pi|e|true|false)\\b"
         }
       ]
     },
