@@ -4,6 +4,7 @@
   "description": "Syntax Highlighting for math-lang",
   "repository": "https://github.com/revival0728/math-lang-vsc-extension",
   "version": "0.1.0",
+  "icon": "icons/extension.png",
   "engines": {
     "vscode": "^1.125.0"
   },
@@ -15,7 +16,11 @@
       "id": "math-lang-hsingfu",
       "aliases": ["math-lang", "math-lang-hsingfu"],
       "extensions": [".mls"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "icons/file-light.svg",
+        "dark": "icons/file-dark.svg"
+      }
     }],
     "grammars": [{
       "language": "math-lang-hsingfu",
