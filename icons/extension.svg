@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- 深邃賽博夜空漸層 -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </radialGradient>
+
+    <!-- 主體 ƒ 光軌霓虹漸層 (電光青藍 -> 霓虹紫粉) -->
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="45%" stop-color="#4facfe"/>
+      <stop offset="70%" stop-color="#00c6ff"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+
+    <!-- 次要節點光芒漸層 -->
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 外層圓角底板 -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bgGlow)" stroke="#27273a" stroke-width="2.5"/>
+
+  <!-- 背景幾何極座標微光環 -->
+  <circle cx="64" cy="64" r="44" fill="none" stroke="#313244" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- 核心靈魂：流線型抽象 ƒ 與表達式彎道 -->
+  <path d="M 46 96 
+           C 58 96, 60 76, 62 64 
+           C 64 52, 62 30, 80 30 
+           C 92 30, 96 38, 92 46
+           M 36 54 C 54 54, 72 52, 88 52" 
+        fill="none" 
+        stroke="url(#flowGrad)" 
+        stroke-width="9" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+
+  <!-- 環繞運算的數學符號星點 (代表 Everything is Math) -->
+  <!-- 頂部加號 (+) -->
+  <g stroke="url(#nodeGrad)" stroke-width="3" stroke-linecap="round">
+    <line x1="38" y1="32" x2="38" y2="42"/>
+    <line x1="33" y1="37" x2="43" y2="37"/>
+  </g>
+
+  <!-- 右下角等號 (=) -->
+  <g stroke="#00f2fe" stroke-width="3" stroke-linecap="round">
+    <line x1="80" y1="80" x2="92" y2="80"/>
+    <line x1="80" y1="86" x2="92" y2="86"/>
+  </g>
+
+  <!-- 關鍵運算節點發光體 -->
+  <circle cx="92" cy="46" r="4.5" fill="#f43f5e"/>
+  <circle cx="62" cy="64" r="3.5" fill="#00f2fe"/>
+</svg>

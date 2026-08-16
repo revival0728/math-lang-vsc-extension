@@ -15,3 +15,7 @@ This is langauge extension for [math-lang](https://github.com/revival0728/math-l
 
 - Initial Release
 - add language icon
+
+### 0.2.0
+
+- update syntax to math-lang `v0.10.0`
